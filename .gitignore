@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+env
+media
+!media/stock_img
+db.*
+assets
+migrations
