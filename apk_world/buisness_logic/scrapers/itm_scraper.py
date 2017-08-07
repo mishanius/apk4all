@@ -22,14 +22,33 @@ class ItmScraper(UrlScraperObj):
             else:
                 Title = item_container.find("header", {"class": "entry-header"}).find("h1").text
                 Image = item_container.find("div", {"class": "app-icon"}).find("img").get('src')
-                DownloadLink = item_container.find("div", {"class": "entry-content"}).find_all("p")[-1].find("a").get('href')
-                DetailsLink = item_container.find("div", {"class": "entry-content"}).find_all("p")[-1].find("a").get('href')
+                try:
+                    DownloadLink = item_container.find("div", {"class": "entry-content"}).find_all("p")[-1].find("a").get('href')
+                except Exception as e:
+                    DownloadLink = self.data.find("a", {"class": "download"}).get('href')
+                DetailsLink = DownloadLink
                 # TODO rating
                 Rating =0
                 app = AppModel(Title = Title, Image = Image, DownloadLink = DownloadLink, DetailsLink = DetailsLink)
-            app.Description = item_container.find("div", {"class": "entry-content"}).find_all("p")[1].text
+            app.Description = self.scrape_description(item_container.find("div", {"class": "entry-content"}))
+                # item_container.find("div", {"class": "entry-content"}).find_all("p")[1].text
             x = mtranslate.translate(app.Description, "ru", "auto")
             app.FrDescription = x
         except Exception as e:
             x=5
         return app
+
+    def scrape_description(self, item_container):
+        description = ""
+        try:
+            if item_container.find("div", {"class": "more-block"}):
+                description += item_container.find("div", {"class": "more-block"}).text
+                item_container = self.data
+            for i in item_container.find_all("p", {'class': None, "style": None}):
+                if i.find("img") or i.find("a") or i.find("script") or i.find("p"):
+                    continue
+                elif len(i.text)>5:
+                    description += "\n"+i.text
+        except Exception as e:
+            x=5
+        return description
