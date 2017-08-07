@@ -1,0 +1,43 @@
+<div class="searchList" layout="row" layout-wrap layout-margin>
+<div md-whiteframe="3" flex="99" flex-gt-sm="66">
+    <strong ng-show="isLoading">Please wait while we are searching</strong>
+    <div class='md-padding' layout-align="center" layout="row" layout-wrap>
+        <md-progress-circular md-mode="indeterminate" md-diameter="70" ng-show="isLoading" ></md-progress-circular>
+        <div ng-repeat="game in games" flex="100" layout="column" layout-margin>
+                    <div layout="row" flex="100">
+                    <img ng-src="{{game.Image}}" class="md-card-image" alt="game pic" flex="20">
+                        <div layout="column" flex="80">
+                            <div><p>{{game.Title}}</p></div>
+                            <div layout="row">
+                                <md-button class="md-raised md-primary" ng-click="goToApp(game.DetailsLink)"  flex="40">
+                                To Download Page </md-button>
+                            </div>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+        </div>
+        <!--
+        <md-card style="width: 300px;" >
+           <img ng-src="{{game.Image}}" class="md-card-image" alt="game pic">
+            <!--<img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">-->
+        <!--  <md-card-content>
+            <h2>{{game.name}}</h2>
+          </md-card-content>
+        </md-card>
+        -->
+    </div>
+  </div>
+    <div md-whiteframe="2" flex-gt-sm="30" flex="66"   layout-wrap layout="column" style="height: 0%;">
+        Most Popular Of Week
+        <md-divider></md-divider>
+        <div ng-repeat="game in games" layout="column" layout-margin>
+            <div layout="row" flex="100">
+            <img ng-src="{{game.Image}}" class="md-card-image" alt="game pic" flex="20">
+            <div flex="80"><p>something</p></div>
+            </div>
+            <md-divider></md-divider>
+        </div>
+    </div>
+</div>
+
+

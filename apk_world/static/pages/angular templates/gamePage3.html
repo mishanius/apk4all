@@ -1,0 +1,40 @@
+<div class="searchList" layout="column" layout-wrap layout-margin>
+    <div class='md-padding' layout-align="center" layout="row" layout-wrap>
+        <md-progress-circular md-mode="indeterminate" md-diameter="70" ng-show="isLoading" ></md-progress-circular>
+    </div>
+    <div md-whiteframe="3" class='md-padding' ng-hide="isLoading">
+        <div layout="column">
+            <div layout="row">
+                <div flex="33">
+                    <img ng-src="{{game.Image}}" class="md-card-image" alt="game pic">
+                </div>
+                <div flex="66">
+                    <h1>{{game.Title}}</h1>
+                    <md-button class="md-raised md-primary" ng-click="showDownload(game)"  flex="40">
+                                Download </md-button>
+                </div>
+            </div>
+            <div>
+                <md-content>
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab label="Description">
+                            <md-content class="md-padding">
+                                    <p>{{game.FrDescription}}</p>
+                            </md-content>
+                        </md-tab>
+                        <md-tab label="Images">
+                            <md-content class="md-padding">
+                                <p>some images</p>
+                            </md-content>
+                        </md-tab>
+                        <md-tab label="More Details">
+                            <md-content class="md-padding">
+                                    <p>More details</p>
+                            </md-content>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+            </div>
+        </div>
+    </div>
+</div>
