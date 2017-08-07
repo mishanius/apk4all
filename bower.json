@@ -1,0 +1,25 @@
+{
+  "name": "bower",
+  "authors": [
+    "mishanius <michael3120@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "apk_world/static/apk_world/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "angular": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "angular-material": "^1.1.4"
+  }
+}
