@@ -16,7 +16,7 @@ def index(request):
     template = loader.get_template('index.html')
 
     context = {
-        'media': "http://127.0.0.1:8000/media",#settings.MEDIA_ROOT,
+        'media': settings.MEDIA_URL,
     }
     return HttpResponse(template.render(context, request))
 
