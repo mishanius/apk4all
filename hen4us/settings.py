@@ -93,6 +93,34 @@ REST_FRAMEWORK = {
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '[%(levelname)s] [%(asctime)s] [%(module)s] [%(process)d:%(thread)d] %(message)s'
+        },
+    },
+    'handlers': {
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(PROJECT_PATH, "apk_world/static/logs/debug.log"),
+            'maxBytes': 1024 * 1024 * 15,  # 15 MB
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        'apk_world': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+
+        },
+    }
+}
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

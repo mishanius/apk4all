@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from apk_world.utils.apk_logger import logger
 from django.conf import settings
 import base64
 from apk_world.buisness_logic.scrapers.search_scraper import SearchScraper
@@ -21,6 +22,7 @@ def index(request):
 
 class Search(APIView):
     def get(self, request, pk, format=None):
+        logger.debug("search")
         s = SearchScraper(pk)
         apps = s.app_scrape()
         serializer_class = SearchedAppSerializer(apps, many=True)

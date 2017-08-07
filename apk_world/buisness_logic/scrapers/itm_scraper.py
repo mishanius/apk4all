@@ -10,23 +10,24 @@ class ItmScraper(UrlScraperObj):
             UrlScraperObj.__init__(self, itm['DetailsLink'])
             self.itm = itm
         else:
-            UrlScraperObj.__init__(self, "https://apkpure.com"+itm)
+            UrlScraperObj.__init__(self, itm)
             self.itm = None
 
     def app_scrape(self):
         app = None
         try:
+            item_container = self.data.find("main", {"class": "main-box"}).find("article")
             if self.itm:
                 app = AppModel(**self.itm)
             else:
-                Title = self.data.find("div", {"class": "title-like"}).find("h1").text
-                Image = self.data.find_all("dt")[0].find("img").get('src')
-                DownloadLink = self.data.find("div", {"class": "ny-down"}).find("a").get('href')
-                DetailsLink = self.data.find("div", {"class": "ny-down"}).find("a").get('href')
+                Title = item_container.find("header", {"class": "entry-header"}).find("h1").text
+                Image = item_container.find("div", {"class": "app-icon"}).find("img").get('src')
+                DownloadLink = item_container.find("div", {"class": "entry-content"}).find_all("p")[-1].find("a").get('href')
+                DetailsLink = item_container.find("div", {"class": "entry-content"}).find_all("p")[-1].find("a").get('href')
                 # TODO rating
                 Rating =0
                 app = AppModel(Title = Title, Image = Image, DownloadLink = DownloadLink, DetailsLink = DetailsLink)
-            app.Description = self.data.find("div", {"id": "describe"}).find("div", {"class": "content"}).text
+            app.Description = item_container.find("div", {"class": "entry-content"}).find_all("p")[1].text
             x = mtranslate.translate(app.Description, "ru", "auto")
             app.FrDescription = x
         except Exception as e:
