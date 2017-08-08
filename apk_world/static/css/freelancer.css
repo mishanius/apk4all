@@ -559,3 +559,28 @@ md-dialog.fullscreen-dialog {
 z-index:1060;
 }
 
+.md-dialog-container{
+z-index:1060;
+}
+
+.searchList .foundItems .appContainer{
+margin-top:5%;
+padding:0px;
+overflow:auto;
+}
+
+.topRated, .topRated div, .topRated div div{
+overflow:auto;
+}
+
+.hrAlter{
+    margin-top:1%;
+    border-width: 1px;
+    border-bottom: 1px solid #eee;
+}
+
+md-progress-circular{
+    margin-left:auto;
+   margin-right:auto;
+   display:block;
+   }
