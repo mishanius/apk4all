@@ -2,7 +2,7 @@
     <div class="col-lg-12" ng-show="isLoading">
         <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
     </div>
-    <div md-whiteframe="3" class='col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12' ng-hide="isLoading">
+    <div md-whiteframe="3" class='tabs col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12' ng-hide="isLoading">
         <div layout="column">
             <div layout="row">
                 <div flex="33">
@@ -10,7 +10,7 @@
                 </div>
                 <div flex="66">
                     <h1>{{game.Title}}</h1>
-                    <md-button class="md-raised md-primary" ng-click="showDownload(game)"  flex="40">
+                    <md-button class="md-raised md-primary" ng-click="showDownload($event)"  flex="40">
                                 Download </md-button>
                 </div>
             </div>

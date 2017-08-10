@@ -589,6 +589,10 @@ body{
 padding-top:150px !important;
 }
 
+.tabs{
+margin-bottom:5%;
+}
+
 @media screen and (max-width: 768px) {
     body { padding-top: 50px !important; }
     .searchList{
