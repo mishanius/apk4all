@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'api/search/$', views.topApps.as_view(), name="API"),
     url(r'api/search/(?P<pk>.+)', views.Search.as_view(), name="API"),
     url(r'api/itm/(?P<name>.*)', views.GetItem.as_view(), name="GetItem"),
     url(r'api/itm/', views.GetItem.as_view(), name="GetItem"),

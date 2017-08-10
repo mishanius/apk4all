@@ -10,4 +10,4 @@ class SearchedAppSerializer(serializers.HyperlinkedModelSerializer):
 class AppSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AppModel
-        fields = ('Title', 'Image', 'DetailsLink', 'FrDescription', 'Description', 'DownloadLink')
+        fields = ('Title', 'Image', 'DetailsLink', 'FrDescription', 'Description', 'DownloadLink','images')

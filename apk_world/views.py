@@ -7,16 +7,22 @@ import base64
 from apk_world.buisness_logic.scrapers.search_scraper import SearchScraper
 from apk_world.buisness_logic.scrapers.itm_scraper import ItmScraper
 from apk_world.buisness_logic.scrapers.download_scraper import DownloadScraper
+from apk_world.buisness_logic.scrapers.top_15_scraper import Top15Scraper
 from rest_framework.views import APIView
 from apk_world.serializers import SearchedAppSerializer, AppSerializer
 from rest_framework.response import Response
 from rest_framework import status
+import json
+from rest_framework.renderers import JSONRenderer
 # Create your views here.
 def index(request):
     template = loader.get_template('index.html')
-
+    s = Top15Scraper()
+    apps = s.app_scrape()
+    results = [ob.as_json() for ob in apps]
     context = {
         'media': settings.MEDIA_URL,
+        'top': json.dumps(results)
     }
     return HttpResponse(template.render(context, request))
 
@@ -24,6 +30,13 @@ class Search(APIView):
     def get(self, request, pk, format=None):
         logger.debug("search")
         s = SearchScraper(pk)
+        apps = s.app_scrape()
+        serializer_class = SearchedAppSerializer(apps, many=True)
+        return Response(serializer_class.data)
+
+class topApps(APIView):
+    def get(self, request, format=None):
+        s = Top15Scraper()
         apps = s.app_scrape()
         serializer_class = SearchedAppSerializer(apps, many=True)
         return Response(serializer_class.data)
@@ -39,8 +52,9 @@ class GetItem(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, name, format=None):
-        name = base64.b64decode(name).decode('utf-8')
-        s = ItmScraper(name)
+        prefixs = int(base64.b64decode(name).decode('utf-8')[0])
+        name = base64.b64decode(name).decode('utf-8')[1:]
+        s = ItmScraper(name, prefixs)
         app = s.app_scrape()
         if app:
             serializer_class = AppSerializer(app)

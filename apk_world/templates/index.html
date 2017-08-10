@@ -14,8 +14,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/bootstrap/dist/css/bootstrap.css' %}">
     <!-- angular material core css -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/angular-material/angular-material.min.css' %}">
+    <!-- carousel-ui  css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/angular-ui-carousel/dist/ui-carousel.css' %}">
     <!-- Theme CSS -->
     <link rel='stylesheet' href="{% static 'css/freelancer.css'%}"/>
+
 
 
      <!-- Plugin JavaScript -->
@@ -27,6 +30,9 @@
     <script type="text/javascript" src="{% static 'assets/angular-messages/angular-messages.min.js'%}"></script>
     <script type="text/javascript" src="{% static 'assets/angular-aria/angular-aria.min.js'%}"></script>
     <script type="text/javascript" src="{% static 'assets/angular-material/angular-material.min.js'%}"></script>
+
+    <!-- angular premade libs -->
+    <script type="text/javascript" src="{% static 'assets/angular-ui-carousel/dist/ui-carousel.min.js'%}"></script>
 
     <!-- Custom Fonts -->
 
@@ -46,6 +52,7 @@
 <script type="text/javascript">
     var static_path = "{%static '' %}";
     var media = "{{media}}";
+    var topapps={{top|safe}};
 </script>
 </head>
 <body id="page-top" class="index" ng-app="apk_world_app">

@@ -10,6 +10,7 @@ angular.module('apk_world_app')
 	        $scope.isLoading = false;
 	    });
 
+
     $scope.showDownload = showDialog;
         function showDialog(game) {
             api.post("api/itm", game).then(function (results) {

@@ -2,7 +2,7 @@
     <div class="col-lg-12" ng-show="isLoading">
         <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
     </div>
-    <div md-whiteframe="3" class='col-lg-12' ng-hide="isLoading">
+    <div md-whiteframe="3" class='col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12' ng-hide="isLoading">
         <div layout="column">
             <div layout="row">
                 <div flex="33">
@@ -23,14 +23,9 @@
                             </md-content>
                         </md-tab>
                         <md-tab label="Images">
-                            <md-content class="md-padding">
-                                <p>some images</p>
-                            </md-content>
-                        </md-tab>
-                        <md-tab label="More Details">
-                            <md-content class="md-padding">
-                                    <p>More details</p>
-                            </md-content>
+                                <div class="img_gal" ng-repeat="i in game.images">
+                                    <img class="col-lg-6 col-lg-offset-3" ng-src="{{i}}">
+                                </div>
                         </md-tab>
                     </md-tabs>
                 </md-content>

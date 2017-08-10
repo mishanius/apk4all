@@ -517,8 +517,8 @@ div#maincontent {
 
 .searchList{
   min-height:100%;
-  margin-top:10%;
-  padding:5%;
+  margin: 0 5%;
+  padding:1% 0;
 }
 .view{
 position:relative;
@@ -584,3 +584,21 @@ md-progress-circular{
    margin-right:auto;
    display:block;
    }
+
+body{
+padding-top:150px !important;
+}
+
+@media screen and (max-width: 768px) {
+    body { padding-top: 50px !important; }
+    .searchList{
+  min-height:100%;
+  margin: 0;
+  padding:1% 0;
+}
+}
+
+.img_gal img{
+margin-top:2%;
+margin-bottom:2%;
+}

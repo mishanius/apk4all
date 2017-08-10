@@ -34,10 +34,10 @@
     <div md-whiteframe="2" class="topRated col-lg-3 col-lg-offset-1">
         Most Popular Of Week
         <hr/>
-        <div ng-repeat="game in games">
-            <div>
+        <div ng-repeat="game in TopGames">
+            <div ng-click="goToApp(game.DetailsLink)">
                 <img ng-src="{{game.Image}}" alt="game pic" class="col-lg-3">
-                <div class="col-lg-9"><p>something</p></div>
+                <div class="col-lg-9"><p>{{game.Title}}</p></div>
             </div>
             <hr/>
         </div>

@@ -20,6 +20,7 @@
     "font-awesome": "^4.6.3",
     "angular": "^1.6.5",
     "angular-route": "^1.6.5",
-    "angular-material": "^1.1.4"
+    "angular-material": "^1.1.4",
+    "angular-ui-carousel": "^0.1.10"
   }
 }
