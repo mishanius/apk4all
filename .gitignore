@@ -6,3 +6,4 @@ db.*
 assets
 migrations
 logs
+__pycache__
