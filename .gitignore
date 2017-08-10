@@ -7,3 +7,4 @@ assets
 migrations
 logs
 __pycache__
+.bowerrc

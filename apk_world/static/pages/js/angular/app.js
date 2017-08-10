@@ -1,4 +1,4 @@
-angular.module('apk_world_app', ['ngRoute','ngMaterial','ui.carousel'])
+angular.module('apk_world_app', ['ngRoute','ngMaterial'])
 .config(function($routeProvider) {
 		var main = {
             controller: 'mainCtrl',
