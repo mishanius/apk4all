@@ -15,74 +15,68 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Our Top 15</h2>
+                    <h2>Top 15 Game Apps</h2>
                     <hr class="star-primary">
                 </div>
             </div>
+            <div class="TopApps">
+                <div class="row">
+                    <div class="app_card portfolio-item" ng-repeat="i in TopGames">
+                        <a href="/#!/app{{i.DetailsLink}}" class="portfolio-link" data-toggle="modal">
+                            <div class="row">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img ng-src="{{i.Image}}" class="img-responsive" alt="Cabin">
+                            </div>
+                            <!--
+                            <div class="row">
+                                <span>{{i.Title}}</span>
+                            </div>
+                            -->
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+ <section class="portfolio">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{media}}/stock_img/portfolio/cabin.png" class="img-responsive" alt="Cabin">
-                    </a>
+                <div class="col-lg-12 text-center">
+                    <h2>Top 15 Apps</h2>
+                    <hr class="star-primary">
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+            <div class="TopApps">
+                <div class="row">
+                    <div class="app_card portfolio-item" ng-repeat="i in TopGames">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="row">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img ng-src="{{i.Image}}" class="img-responsive" alt="Cabin">
                             </div>
-                        </div>
-                        <img src="{{media}}/stock_img/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                            <!--
+                            <div class="row">
+                                <span>{{i.Title}}</span>
                             </div>
-                        </div>
-                        <img src="{{media}}/stock_img/portfolio/circus.png" class="img-responsive" alt="Circus tent">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{media}}/stock_img/portfolio/game.png" class="img-responsive" alt="Game controller">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{media}}/stock_img/portfolio/safe.png" class="img-responsive" alt="Safe">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{media}}/stock_img/portfolio/submarine.png" class="img-responsive" alt="Submarine">
-                    </a>
+                            -->
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
