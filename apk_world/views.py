@@ -18,11 +18,14 @@ from rest_framework.renderers import JSONRenderer
 def index(request):
     template = loader.get_template('index.html')
     s = Top15Scraper()
+    games = s.game_scrape()
     apps = s.app_scrape()
-    results = [ob.as_json() for ob in apps]
+    gamesList = [ob.as_json() for ob in games]
+    appsList = [ob.as_json() for ob in apps]
     context = {
         'media': settings.MEDIA_URL,
-        'top': json.dumps(results)
+        'topGames': json.dumps(gamesList),
+        'topApps': json.dumps(appsList)
     }
     return HttpResponse(template.render(context, request))
 
