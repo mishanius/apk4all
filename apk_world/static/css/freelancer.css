@@ -563,9 +563,15 @@ padding:0px;
 overflow:auto;
 }
 
-.topRated, .topRated div, .topRated div div{
+.facebook_con, .topRated, .topRated div, .topRated div div{
 overflow:auto;
 }
+
+.facebook_con{
+margin-bottom:20px;
+}
+
+
 
 .hrAlter{
     margin-top:1%;

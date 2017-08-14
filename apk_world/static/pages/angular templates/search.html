@@ -31,15 +31,20 @@
         -->
     </div>
   </div>
-    <div md-whiteframe="2" class="topRated col-lg-3 col-lg-offset-1">
-        Most Popular Of Week
-        <hr/>
-        <div ng-repeat="game in TopGames">
-            <div ng-click="goToApp(game.DetailsLink)">
-                <img ng-src="{{game.Image}}" alt="game pic" class="col-lg-3">
-                <div class="col-lg-9"><p>{{game.Title}}</p></div>
-            </div>
+    <div class="col-lg-3 col-lg-offset-1">
+        <div md-whiteframe="2" class="facebook_con row">
+            <div class="fb-page" data-href="https://www.facebook.com/MondeDuAPK/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MondeDuAPK/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MondeDuAPK/">Monde du APK</a></blockquote></div>
+        </div>
+        <div md-whiteframe="2" class="topRated row">
+            Most Popular Of Week
             <hr/>
+            <div ng-repeat="game in TopGames">
+                <div ng-click="goToApp(game.DetailsLink)">
+                    <img ng-src="{{game.Image}}" alt="game pic" class="col-lg-3">
+                    <div class="col-lg-9"><p>{{game.Title}}</p></div>
+                </div>
+                <hr/>
+            </div>
         </div>
     </div>
 </div>
