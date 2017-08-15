@@ -72,9 +72,10 @@ header {
   color: white;
 }
 header .container {
-  padding-top: 100px;
+  padding-top: 0px;
   padding-bottom: 50px;
 }
+
 header img {
   display: block;
   margin: 0 auto 20px;
@@ -92,7 +93,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 200px;
+    padding-top: 0px;
     padding-bottom: 100px;
   }
   header .intro-text .name {
@@ -108,6 +109,11 @@ header .intro-text .skills {
   text-transform: uppercase;
   font-weight: 700;
   border: none;
+}
+
+.navbar-custom img{
+float:left;
+max-height:100px;
 }
 .navbar-custom .navbar-brand {
   color: white;
@@ -155,7 +161,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    padding: 25px 0;
+    padding: 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
@@ -507,6 +513,14 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
+  padding:0px;
+  padding-bottom:50px;
+  margin:0px;
+  width:100%;
+}
+
+div#maincontent img {
+  height:90vh;
 }
 
 .searchList{
@@ -558,7 +572,7 @@ z-index:1060;
 }
 
 .searchList .foundItems .appContainer{
-margin-top:5%;
+margin-top:50px;
 padding:0px;
 overflow:auto;
 }
@@ -586,7 +600,7 @@ md-progress-circular{
    }
 
 body{
-padding-top:150px !important;
+padding-top:100px !important;
 }
 
 .tabs{
@@ -598,6 +612,7 @@ margin-bottom:5%;
     .searchList{
   min-height:100%;
   margin: 0;
+  margin-top:50px;
   margin-bottom:5%;
   padding:1% 0;
 }
