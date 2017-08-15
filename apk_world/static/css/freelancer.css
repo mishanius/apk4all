@@ -78,7 +78,7 @@ header .container {
 
 header img {
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 0px;
 }
 header .intro-text .name {
   display: block;
@@ -513,14 +513,23 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
-  padding:0px;
+  padding:10px;
   padding-bottom:50px;
   margin:0px;
   width:100%;
 }
 
-div#maincontent img {
-  height:90vh;
+div#maincontent > .row > div {
+    box-shadow:0px 0px 10px #0a6353;
+    padding:0;
+}
+
+#bs-example-navbar-collapse-1{
+margin-top:2%;
+}
+
+.navbar-header a{
+margin-top:5%;
 }
 
 .searchList{
