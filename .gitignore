@@ -2,6 +2,7 @@
 env
 media
 !media/stock_img
+!media/stock_img/*
 db.*
 assets
 migrations
