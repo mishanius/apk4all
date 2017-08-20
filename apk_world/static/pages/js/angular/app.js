@@ -1,5 +1,5 @@
-angular.module('apk_world_app', ['ngRoute','ngMaterial'])
-.config(function($routeProvider) {
+angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb'])
+.config(function($routeProvider, ezfbProvider) {
 		var main = {
             controller: 'mainCtrl',
 			templateUrl : static_path+'pages/angular templates/main.html',
@@ -29,4 +29,9 @@ angular.module('apk_world_app', ['ngRoute','ngMaterial'])
 			.otherwise({
 				redirectTo: '/'
 			});
+        //facebook plugin configurations
+        ezfbProvider.setInitParams({
+            appId: '793816200755355',
+            // Module default is `v2.6`.
+        });
     });

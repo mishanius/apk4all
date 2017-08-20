@@ -21,6 +21,7 @@
     "angular": "^1.6.5",
     "angular-route": "^1.6.5",
     "angular-material": "^1.1.4",
-    "angular-ui-carousel": "^0.1.10"
+    "angular-ui-carousel": "^0.1.10",
+    "angular-easyfb": "^1.5.2"
   }
 }
