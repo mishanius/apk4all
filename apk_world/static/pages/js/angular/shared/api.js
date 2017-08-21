@@ -13,6 +13,7 @@ angular.module('apk_world_app').factory('api', function($q, $http) {
         return deferred.promise;
     };
     var post = function(api_path, data){
+        console.log("post");
         var deferred = $q.defer();
         $http({
             method: "POST",

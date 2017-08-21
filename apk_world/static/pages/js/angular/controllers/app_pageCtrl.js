@@ -10,19 +10,25 @@ angular.module('apk_world_app')
 	        $scope.isLoading = false;
 	    });
 
-
-    $scope.showDownload = function(event) {
-               $mdDialog.show ({
+    var dialog = {
                   clickOutsideToClose: true,
                   scope: $scope,
                   preserveScope: true,
-                  templateUrl:static_path+'pages/angular templates/downloadPage1.html',
+                  templateUrl:static_path+'pages/angular templates/downloadPage2.html',
                   controller: function DialogController($scope, $mdDialog) {
-                     $scope.closeDialog = function() {
+                    $scope.ready=false;
+                    api.post("download",$scope.game).then(function (results) {
+                    dialog.scope.game.DownloadLink=results.data.DownloadLink;
+                    $scope.ready=true;
+                    });
+                    $scope.closeDialog = function() {
                         $mdDialog.hide();
-                     }
+                    }
                   }
-               });
+               }
+
+    $scope.showDownload = function(event) {
+                $mdDialog.show (dialog);
             };
 
 
