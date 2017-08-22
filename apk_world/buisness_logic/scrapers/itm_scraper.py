@@ -2,6 +2,7 @@ from apk_world.buisness_logic.scrapers.url_scraper import UrlScraperObj
 from apk_world.models import AppModel, ImageModel
 import urllib
 import mtranslate
+import re
 
 class ItmScraper(UrlScraperObj):
     '''return beutifull soap object of the url string or an array of objects if array of urls provided'''
@@ -94,7 +95,7 @@ class ItmScraper(UrlScraperObj):
         images = []
         for count,i in enumerate(img_container.find_all(url_tag)):
             # have alook at models before touching
-            if not root_url+i.get(url_derective) in appModel.images and count<5:
+            if not root_url+i.get(url_derective) in images and count<5:
                 images.append(root_url+i.get(url_derective))
         appModel.images = images
         return appModel
@@ -112,7 +113,7 @@ class ItmScraper(UrlScraperObj):
                     description += "\n" + i.text
         except Exception as e:
             x = 5
-        return description
+        return "<br />".join(re.sub(r'.+?9Apps[\.,\s]?.+[\!\.,][\n\s]+',"",description,re.DOTALL).split("\n"))
 
     def nineAppsScrape(self):
         app = None
@@ -120,6 +121,8 @@ class ItmScraper(UrlScraperObj):
             item_container = self.data.find("div", {"class": "detail-info-section"})
             main_info = self.data.find("div", {"class": "main-info"})
             details_container = item_container.find("div", {"class": "detail-left"})
+            if not details_container:
+                details_container=item_container
             images = []
             if self.itm:
                 app = AppModel(**self.itm)

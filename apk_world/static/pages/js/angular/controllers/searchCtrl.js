@@ -2,7 +2,7 @@ angular.module('apk_world_app')
 	.controller('searchCtrl', ['$scope','api','$mdDialog','$window','$routeParams','$location',
 	function($scope, api, $mdDialog, $window, $routeParams, $location) {
 	    $scope.media = media;
-	    $scope.TopGames = topapps;
+	    $scope.TopGames = topgames;
 	    $scope.static_path = static_path;
 	    $scope.isLoading = true;
 //	    api_ans_generator.searchResults().then(function(results){

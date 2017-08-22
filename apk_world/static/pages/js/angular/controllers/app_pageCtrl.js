@@ -1,12 +1,13 @@
 angular.module('apk_world_app')
-	.controller('app_pageCtrl', ['$scope','api','$mdDialog','$window','$routeParams',
-	function($scope, api, $mdDialog, $window, $routeParams) {
+	.controller('app_pageCtrl', ['$scope','api','$mdDialog','$window','$routeParams','$sce',
+	function($scope, api, $mdDialog, $window, $routeParams, $sce) {
 	    $scope.media = media;
 	    $scope.static_path = static_path;
 	    $scope.isLoading = true;
 //	    api_ans_generator.searchResults().then(function(results){
 	    api.searchResults("api/itm",$routeParams.hash).then(function (results) {
 	        $scope.game = results.data;
+	        $scope.game.FrDescription= $sce.trustAsHtml($scope.game.FrDescription);
 	        $scope.isLoading = false;
 	    });
 
