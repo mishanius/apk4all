@@ -15,7 +15,7 @@ angular.module('apk_world_app')
                   clickOutsideToClose: true,
                   scope: $scope,
                   preserveScope: true,
-                  templateUrl:static_path+'pages/angular templates/downloadPage2.html',
+                  templateUrl:static_path+'pages/angular templates/downloadPage3.html',
                   controller: function DialogController($scope, $mdDialog) {
                     $scope.ready=false;
                     api.post("download",$scope.game).then(function (results) {
