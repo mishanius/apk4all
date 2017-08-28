@@ -27,7 +27,7 @@ SECRET_KEY = 'q9-2tubqf*hpp@h#d+ce_5n4jsfwa*n32+e@td8)5yzc#m$1qq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".amazonaws.com", '127.0.0.1']
+ALLOWED_HOSTS = [".amazonaws.com", '127.0.0.1',".mondeduapk.com"]
 
 
 # Application definition
