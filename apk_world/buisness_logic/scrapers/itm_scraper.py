@@ -36,7 +36,7 @@ class ItmScraper(UrlScraperObj):
                     app = AppModel(Title = Title, Image = Image, DownloadLink = DownloadLink, DetailsLink = DetailsLink)
                 app.Description = self.scrape_description(item_container.find("div", {"class": "entry-content"}))
                     # item_container.find("div", {"class": "entry-content"}).find_all("p")[1].text
-                x = mtranslate.translate(app.Description, "ru", "auto")
+                x = mtranslate.translate(app.Description, "fr", "auto")
                 app.FrDescription = x
             except Exception as e:
                 x=5
@@ -85,7 +85,7 @@ class ItmScraper(UrlScraperObj):
             ignrtg = ["a","div"]
             app.Description = self.russian_scrape_description(item_container.find("div", {"class": "file-desc"}),"p",""
                                                               ,ignrtg)
-            x = mtranslate.translate(app.Description, "en", "auto")
+            x = mtranslate.translate(app.Description, "fr", "auto")
             app.FrDescription = x
         except Exception as e:
             x = 5
@@ -140,7 +140,7 @@ class ItmScraper(UrlScraperObj):
             ignrtg = ["a", "div"]
             app.Description = self.russian_scrape_description(details_container, "p",
                                                               {"class":"description"}, ignrtg)
-            x = mtranslate.translate(app.Description, "ru", "auto")
+            x = mtranslate.translate(app.Description, "fr", "auto")
             app.FrDescription = x
         except Exception as e:
             x = 5
