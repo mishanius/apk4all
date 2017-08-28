@@ -16,7 +16,7 @@ class Top15Scraper(UrlScraperObj):
             for counter, i in enumerate(self.data.find("div", {"class": "hot-app-list"}).find_all("li")):
                 item_container = i
                 title = item_container.find("span", {"class":"name"}).text
-                if title in titles or counter > 14:
+                if title in titles or counter > 25:
                     continue
                 titles.append(title)
                 # i.find_all("header")[0].find("h2", {"class": "entry-title"}).find("a").string
@@ -38,7 +38,7 @@ class Top15Scraper(UrlScraperObj):
             for counter, i in enumerate(urlScr.data.find("div", {"class": "hot-app-list"}).find_all("li")):
                 item_container = i
                 title = item_container.find("span", {"class":"name"}).text
-                if title in titles or counter > 14:
+                if title in titles or counter > 25:
                     continue
                 titles.append(title)
                 # i.find_all("header")[0].find("h2", {"class": "entry-title"}).find("a").string
