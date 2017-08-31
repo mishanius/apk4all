@@ -22,7 +22,7 @@ angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb'])
             controller: 'app_pageCtrl',
 			templateUrl : static_path+'pages/angular templates/gamePage3.html',
 		};
-//		$locationProvider.hashPrefix('');
+		$locationProvider.hashPrefix('');
 		$routeProvider
 			.when('/', main)
 			.when('/search:kw?', search)
