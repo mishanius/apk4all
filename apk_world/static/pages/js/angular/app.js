@@ -1,5 +1,5 @@
 angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb'])
-.config(function($routeProvider, ezfbProvider) {
+.config(function($routeProvider,$locationProvider, ezfbProvider) {
 		var main = {
             controller: 'mainCtrl',
 			templateUrl : static_path+'pages/angular templates/main.html',
@@ -22,12 +22,13 @@ angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb'])
             controller: 'app_pageCtrl',
 			templateUrl : static_path+'pages/angular templates/gamePage3.html',
 		};
+		$locationProvider.hashPrefix('');
 		$routeProvider
-			.when('/', main)
+			.when('/main', main)
 			.when('/search:kw?', search)
 			.when('/app:hash?', appPage)
 			.otherwise({
-				redirectTo: '/'
+				redirectTo: '/main'
 			});
         //facebook plugin configurations
         ezfbProvider.setInitParams({
