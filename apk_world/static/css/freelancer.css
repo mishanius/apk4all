@@ -514,7 +514,7 @@ fieldset[disabled] .btn-success.active {
 div#maincontent {
   outline: none;
   padding:10px;
-  padding-bottom:50px;
+  padding-bottom:5px;
   margin:0px;
   width:100%;
 }
@@ -555,6 +555,13 @@ min-height:100%;
 .searchList md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
+
+.searchList > div h1 {
+  font-size: 3vw;
+}
+
+.searchList > div md-button h1{
+font-size: 1vw;}
 
 .download_btn{
 background-color:green !important;}
@@ -616,7 +623,7 @@ margin-bottom:5%;
 }
 
 @media screen and (max-width: 768px) {
-    body { padding-top: 50px !important; }
+    body { padding-top: 90px !important; }
     .searchList{
   min-height:100%;
   margin: 0;
@@ -658,3 +665,6 @@ margin-bottom:2%;
 
 section.portfolio{
 padding:10px;}
+
+section.portfolio h2{
+font-size:3vw}
