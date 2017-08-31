@@ -24,11 +24,11 @@ angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb'])
 		};
 		$locationProvider.hashPrefix('');
 		$routeProvider
-			.when('/main', main)
+			.when('/', main)
 			.when('/search:kw?', search)
 			.when('/app:hash?', appPage)
 			.otherwise({
-				redirectTo: '/main'
+				redirectTo: '/'
 			});
         //facebook plugin configurations
         ezfbProvider.setInitParams({
