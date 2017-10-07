@@ -29,12 +29,13 @@ angular.module('apk_world_app')
                }
 
     $scope.showDownload = function(event) {
-                if ( !LockyLuke.noOffers ) {
-                    $mdDialog.show (dialog);
-                } else {
-                    dialog.templateUrl=static_path+'pages/angular templates/downloadPageNfr.html';
-                    $mdDialog.show (dialog);
-                }
+                $mdDialog.show (dialog);
+//                if ( !LockyLuke.noOffers ) {
+//                    $mdDialog.show (dialog);
+//                } else {
+//                    dialog.templateUrl=static_path+'pages/angular templates/downloadPageNfr.html';
+//                    $mdDialog.show (dialog);
+//                }
             };
 
 
