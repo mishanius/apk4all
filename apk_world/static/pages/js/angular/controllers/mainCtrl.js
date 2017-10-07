@@ -1,5 +1,5 @@
 angular.module('apk_world_app')
-	.controller('mainCtrl', function mainCtrl($scope, $location) {
+	.controller('mainCtrl',['$scope','$location','api',function mainCtrl($scope, $location, api) {
 	    $scope.media = media;
 	    $scope.TopGames = topgames;
 	    $scope.TopApps = topapps;
@@ -7,4 +7,5 @@ angular.module('apk_world_app')
 	    $scope.search = function(kw){
                                     $location.path("/search"+kw)
                                     }
-	});
+
+	}]);

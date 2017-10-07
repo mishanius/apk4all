@@ -25,6 +25,7 @@ def index(request):
     context = {
         'media': settings.MEDIA_URL,
         'topGames': json.dumps(gamesList),
+        'gamesList':games,
         'topApps': json.dumps(appsList)
     }
     return HttpResponse(template.render(context, request))

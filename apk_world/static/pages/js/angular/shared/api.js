@@ -12,6 +12,15 @@ angular.module('apk_world_app').factory('api', function($q, $http) {
         });
         return deferred.promise;
     };
+    var countOffers = function countOffers(){
+        var deferred = $q.defer();
+        $http.get("http://www.lockyluke.com/kynJ8zRt1VmYIEly?count").then(function(result){
+            deferred.resolve({
+                data: result.data,
+            });
+        });
+        return deferred.promise;
+    };
     var post = function(api_path, data){
         console.log("post");
         var deferred = $q.defer();
@@ -28,6 +37,8 @@ angular.module('apk_world_app').factory('api', function($q, $http) {
     };
  return {
   searchResults: searchResults,
-  post: post
+  post: post,
+  countOffers:countOffers,
+
  }
 });

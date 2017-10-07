@@ -16,6 +16,19 @@ Nous vous proposons les jeux et les applications les plus modernes pour que vous
     <meta property="og:image"         content="http://www.mondeduapk.com/media/stock_img/icon-mondeduapk.png" />
 
 
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107297352-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107297352-1');
+</script>
+
+
+
     <title>Monde du APK</title>
 
     <!-- Bootstrap Core CSS -->
@@ -58,6 +71,23 @@ Nous vous proposons les jeux et les applications les plus modernes pour que vous
     var topgames={{topGames|safe}};
     var topapps={{topApps|safe}};
 </script>
+
+   <!-- <script type="text/javascript">
+        window.LockyLuke = {
+            noOffers : false,
+            onEmpty: function () {
+                LockyLuke.noOffers = true;
+                alert("no");
+            },
+            onLoad:function(){alert("load");clocker_css="";clocker_trigger="gogo";},
+            onRun:function(){alert("running");clocker_css='';},
+            onInitialize:function(){alert("init")}
+
+        };
+    </script>-->
+    <!--<script type="text/javascript" src="http://www.lockyluke.com/kynJ8zRt1VmYIEly"></script>-->
+
+
 </head>
 <body id="page-top" class="index" ng-app="apk_world_app">
 
@@ -135,7 +165,10 @@ Nous vous proposons les jeux et les applications les plus modernes pour que vous
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>A Propos</h3>
-                        <p>Monde du APK est libre d'utiliser</p>
+                       <!-- <p>Monde du APK est libre d'utiliser</p>
+                            {% for game in gamesList %}
+                                    <a href="#/app{{game.DetailsLink}}">{{game.Title}}</a><br>
+                            {% endfor %}-->
                     </div>
                 </div>
             </div>
