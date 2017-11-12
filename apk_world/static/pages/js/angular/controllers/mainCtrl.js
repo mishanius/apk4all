@@ -1,5 +1,6 @@
 angular.module('apk_world_app')
-	.controller('mainCtrl',['$scope','$location','api',function mainCtrl($scope, $location, api) {
+	.controller('mainCtrl',['$scope','$location','api','$cookieStore',function mainCtrl($scope, $location,
+	 api, $cookieStore) {
 	    $scope.media = media;
 	    $scope.TopGames = topgames;
 	    $scope.TopApps = topapps;

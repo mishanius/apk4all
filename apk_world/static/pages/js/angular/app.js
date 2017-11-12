@@ -1,4 +1,4 @@
-angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb'])
+angular.module('apk_world_app', ['ngRoute','ngMaterial','ezfb', 'ngCookies'])
 .config(function($routeProvider,$locationProvider, ezfbProvider) {
 		var main = {
             controller: 'mainCtrl',
