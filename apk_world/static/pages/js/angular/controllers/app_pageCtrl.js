@@ -40,7 +40,6 @@ angular.module('apk_world_app')
                   controller: function DialogController($scope, $mdDialog) {
                     $scope.ready=false;
                     $scope.gavno = function() {
-                        alert($cookieStore.get("gavno"));
                         $cookieStore.put("gavno","123", {'expires': expireDate});
                     }
                     api.post("download",$scope.game).then(function (results) {
